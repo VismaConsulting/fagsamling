@@ -23,5 +23,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
+      - run: git config --global user.email "circleci@noop.com"
+      - run: git config --global user.name "CI"
       - run: npm run deploy
