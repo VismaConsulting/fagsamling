@@ -26,5 +26,6 @@ jobs:
       - run: git config --global user.email "circleci@noop.com"
       - run: git config --global user.name "CI"
       - run: npm run build
-      - run: cp -R .circleci public/
+      - run: ls -l
+      - run: cp -rv .circleci public/
       - run: npm run deploy
