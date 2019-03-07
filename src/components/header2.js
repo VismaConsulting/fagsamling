@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import VismaLogo from "./VismaLogo";
 import './navbar-overrides.css'
+import {Link} from "gatsby"
 
 const Header = ({siteTitle}) => (
     <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top">
@@ -16,10 +17,10 @@ const Header = ({siteTitle}) => (
         <div className="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                    <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="program/">Program</a>
+                    <Link className="nav-link" to="/program/">Program</Link>
                 </li>
             </ul>
         </div>
