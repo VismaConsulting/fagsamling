@@ -8,7 +8,7 @@ const capitalizeFirst = function(dag) {
 
 const Dag = ({dag, poster}) => {
     return (
-        <div>
+        <div className="col-sm">
             <h2>{capitalizeFirst(DateTime.fromISO(dag).setLocale('nb').toFormat('EEEE'))}</h2>
             {poster.map(edge => {
                 return <Programpost key={edge.node.id} post={edge.node} />
