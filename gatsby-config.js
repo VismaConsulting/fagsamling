@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Visma Consulting Fagsamling`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Websidene til fagsamlingene til Visma Consulting`,
+    author: `@andersems`,
   },
   pathPrefix: `/fagsamling`,
   plugins: [
