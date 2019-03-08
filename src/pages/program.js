@@ -7,15 +7,20 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default ({data = {}}) => {
     const posts = data.allMarkdownRemark.edges;
-    const postsByDay = groupByFra(posts, item => item.node.frontmatter.fra.substring(0, 10));
+    const hovedposter = posts.filter(item => item.node.frontmatter.type !== 'underprogrampost');
+    const underposter = posts.filter(item => item.node.frontmatter.type === 'underprogrampost');
+    const postsByDay = groupByFra(hovedposter, item => item.node.frontmatter.fra.substring(0, 10));
+    const underposterByDay = groupByFra(underposter, item => item.node.frontmatter.fra.substring(0, 10));
     return (
         <Layout>
             <h1 style={{marginBottom: '30px'}}>
                 <FontAwesomeIcon style={{fontSize: '0.8em'}} icon={faCalendarAlt}/> Program
             </h1>
             <div className="row">
-                {Array.from(postsByDay, ([key, value]) =>
-                    <Dag key={key} dag={key} poster={value}/>)
+                {Array.from(postsByDay, ([key, value]) => {
+                    const underposter = underposterByDay.get(key);
+                    return <Dag key={key} dag={key} poster={value} underposter={underposter} />
+                })
                 }
             </div>
         </Layout>
@@ -45,13 +50,18 @@ export const query = graphql`
         node {
           id
           html
+          fields {
+            slug
+          }
           frontmatter {
             title
             sted
             fra
             til
+            kategori
             type
             speaker
+            undersider
           }
           excerpt
         }

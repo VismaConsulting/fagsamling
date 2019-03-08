@@ -1,6 +1,6 @@
 ---
 title: "Velkommen"
-type: "Talk"
+kategori: "Talk"
 speaker: "Vidar Evensen"
 sted: "Auditoriet"
 fra: "2019-03-29T15:30"

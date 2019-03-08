@@ -1,6 +1,6 @@
 ---
 title: "Personvernet som begrensning for videre digitalisering"
-type: "Talk"
+kategori: "Talk"
 speaker: "Monica Verma"
 sted: "Auditoriet"
 fra: "2019-03-29T17:15"
