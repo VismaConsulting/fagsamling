@@ -1,31 +1,31 @@
 import PropTypes from "prop-types"
-import React from "react"
+import React, {useState} from "react"
 import VismaLogo from "./VismaLogo";
 import './navbar-overrides.css'
 import {Link} from "gatsby"
+import {Nav, Navbar, NavbarBrand, NavItem, Collapse, NavbarToggler} from "reactstrap"
 
-const Header = ({siteTitle}) => (
-    <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <Link className="nav-link" to="/">
-            <VismaLogo/>
-        </Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
+const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
-        <div className="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                    <Link className="nav-link" to="/">Hjem <span className="sr-only">(current)</span></Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/program/">Program</Link>
-                </li>
-            </ul>
-        </div>
-    </nav>
-)
+    return (<Navbar color="light" light expand="md" fixed="top">
+            <NavbarBrand href="/">
+                <VismaLogo/>
+            </NavbarBrand>
+            <NavbarToggler onClick={() => setIsOpen(!isOpen)}/>
+            <Collapse isOpen={isOpen} navbar>
+                <Nav className="mr-auto" navbar>
+                    <NavItem>
+                        <Link className="nav-link" to="/">Hjem <span className="sr-only">(current)</span></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link className="nav-link" to="/program/">Program</Link>
+                    </NavItem>
+                </Nav>
+            </Collapse>
+        </Navbar>
+    )
+}
 
 Header.propTypes = {
     siteTitle: PropTypes.string,
