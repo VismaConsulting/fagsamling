@@ -7,7 +7,7 @@ const Programpost = ({post}) => {
     const {frontmatter, excerpt} = post;
     const tidspunkt = frontmatter.fra.split('T')[1];
     return (
-        <div className="card programpost" style={{marginBottom: '10px', border: 'none', width: '30rem', backgroundColor: '#F0F2F5'}}>
+        <div className="card programpost" style={{marginBottom: '10px', border: 'none', backgroundColor: '#F0F2F5'}}>
             <div className="card-body" style={{paddingBottom: '5px'}}>
                 <h6>{tidspunkt} - {frontmatter.title}</h6>
                 <ul className="list-group list-group-horizontal">
