@@ -4,7 +4,6 @@ module.exports = {
     description: `Websidene til fagsamlingene til Visma Consulting`,
     author: `@andersems`,
   },
-  pathPrefix: `/fagsamling`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
