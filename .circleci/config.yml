@@ -25,7 +25,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: git config --global user.email "circleci@noop.com"
       - run: git config --global user.name "CI"
-      - run: echo fagsamling.vismaconsulting.no > CNAME
       - run: npm run build
+      - run: echo fagsamling.vismaconsulting.no > public/CNAME
       - run: cp -rv .circleci public/
       - run: npm run deploy
