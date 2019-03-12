@@ -35,6 +35,7 @@ module.exports = {
         icon: `src/images/visma-just-logo.png`
       },
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
+    `gatsby-plugin-remove-serviceworker`
   ],
 }
