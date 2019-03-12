@@ -16,4 +16,5 @@ undersider:
   - /program/2019-03/breakout/ai1/
   - /program/2019-03/breakout/ai2/
   - /program/2019-03/breakout/pl/
+  - /program/2019-03/breakout/sikkerhet/
 ---
