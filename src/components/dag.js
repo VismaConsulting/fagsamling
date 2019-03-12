@@ -1,6 +1,6 @@
 import React from "react"
 import Programpost from "../components/programpost";
-
+import {DateTime} from "luxon";
 
 const capitalizeFirst = function(dag) {
     return dag.charAt(0).toUpperCase() + dag.slice(1)
