@@ -30,8 +30,8 @@ const Programpost = ({post, underposterForDag = []}) => {
                     {underposterAaVise.map(underpost => {
                         const fra = underpost.node.frontmatter.fra.split('T')[1];
                         const til = underpost.node.frontmatter.til.split('T')[1];
-                        return <div key={underpost.node.fields.slug}>
-                                {fra}-{til}: {underpost.node.frontmatter.title}
+                        return <div style={{fontSize: '0.7em'}} key={underpost.node.fields.slug}>
+                            {fra}-{til}: <a href={underpost.node.fields.slug}>{underpost.node.frontmatter.title}</a>
                         </div>
                     })}
                 </div>
