@@ -2,10 +2,11 @@ import React from "react"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMapMarker, faUser} from '@fortawesome/free-solid-svg-icons'
 import './list-group-programpost-overrides.css'
+import {DateTime} from 'luxon'
 
 const Programpost = ({post, underposterForDag = []}) => {
     const {frontmatter} = post;
-    const tidspunkt = frontmatter.fra.split('T')[1];
+    const tidspunkt = DateTime.fromISO(frontmatter.fra).setLocale('nb').toFormat('HH:mm');
     const underposterTilSiden = frontmatter.undersider || [];
     const underposterAaVise = underposterForDag.filter(underpost => underposterTilSiden.includes(underpost.node.fields.slug));
     return (
