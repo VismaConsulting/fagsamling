@@ -12,7 +12,7 @@ const Programpost = ({post, underposterForDag = []}) => {
         <div className="card programpost" style={{marginBottom: '10px', border: 'none', backgroundColor: '#F0F2F5'}}>
             <div className="card-body" style={{paddingBottom: '5px'}}>
                 <h6>{tidspunkt} - {frontmatter.title}</h6>
-                <ul className="list-group list-group-horizontal">
+                <ul style={{marginBottom: '10px'}} className="list-group list-group-horizontal">
                     {frontmatter.kategori &&
                     <li className="list-group-item list-group-item-primary">
                         {frontmatter.kategori}
@@ -31,7 +31,7 @@ const Programpost = ({post, underposterForDag = []}) => {
                         const fra = underpost.node.frontmatter.fra.split('T')[1];
                         const til = underpost.node.frontmatter.til.split('T')[1];
                         return <div style={{fontSize: '0.7em'}} key={underpost.node.fields.slug}>
-                            {fra}-{til}: <a href={underpost.node.fields.slug}>{underpost.node.frontmatter.title}</a>
+                            {fra}-{til} <a href={underpost.node.fields.slug}>{underpost.node.frontmatter.title}</a>
                         </div>
                     })}
                 </div>
