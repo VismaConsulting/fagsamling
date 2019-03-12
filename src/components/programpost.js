@@ -28,8 +28,10 @@ const Programpost = ({post, underposterForDag = []}) => {
                 </ul>
                 <div>
                     {underposterAaVise.map(underpost => {
+                        const fra = underpost.node.frontmatter.fra.split('T')[1];
+                        const til = underpost.node.frontmatter.til.split('T')[1];
                         return <div key={underpost.node.fields.slug}>
-                            {underpost.node.frontmatter.fra} - {underpost.node.frontmatter.til}
+                                {fra}-{til}: {underpost.node.frontmatter.title}
                         </div>
                     })}
                 </div>
