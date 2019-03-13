@@ -1,5 +1,5 @@
 ---
-title: "Hvordan jobbe med sikkerhet i prosjektene for hver disiplin"
+title: "Sikkerhet som en tverrfaglig disiplin"
 sted: "Auditoriet"
 kategori: "Talk"
 speaker: "Even Lysen"
