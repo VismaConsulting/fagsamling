@@ -1,10 +1,10 @@
 ---
 title: "Breakout Sessions"
-kategori: "Gruppeoppgaver"
+category: "Gruppeoppgaver"
 type: "container"
-fra: "2019-03-30T10:30"
-til: "2019-03-30T12:00"
-undersider:
+from: "2019-03-30T10:30"
+to: "2019-03-30T12:00"
+subevents:
   - /program/2019-03/breakout/toppdotnet1/
   - /program/2019-03/breakout/fux/
   - /program/2019-03/breakout/java1/

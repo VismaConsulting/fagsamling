@@ -1,8 +1,8 @@
 ---
 title: "Teknisk foredrag"
-kategori: "Talk"
-sted: "Auditoriet"
+category: "Talk"
+location: "Auditoriet"
 speaker: "Jamie Woodruff"
-fra: "2019-03-30T09:10"
-til: "2019-03-30T10:20"
+from: "2019-03-30T09:10"
+to: "2019-03-30T10:20"
 ---

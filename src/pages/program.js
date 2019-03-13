@@ -1,16 +1,19 @@
 import React from "react"
 import {graphql} from "gatsby"
-import Layout from "../components/layout"
-import Dag from "../components/dag";
+import Layout from "../components/layout/Layout"
+import InlineDay from "../components/program/InlineDay";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default ({data = {}}) => {
-    const posts = data.allMarkdownRemark.edges;
-    const hovedposter = posts.filter(item => item.node.frontmatter.type !== 'underprogrampost');
-    const underposter = posts.filter(item => item.node.frontmatter.type === 'underprogrampost');
-    const postsByDay = groupByFra(hovedposter, item => item.node.frontmatter.fra.substring(0, 10));
-    const underposterByDay = groupByFra(underposter, item => item.node.frontmatter.fra.substring(0, 10));
+    const {currentFagsamling} = data.site.siteMetadata;
+    const posts = data.allMarkdownRemark.edges
+        .filter(item => item.node.fields.slug.includes(currentFagsamling))
+        .map(item => item.node);
+    const mainEvents = posts.filter(event => event.frontmatter.type !== 'underprogrampost');
+    const subEvents = posts.filter(event => event.frontmatter.type === 'underprogrampost');
+    const postsByDay = groupByFra(mainEvents, event => event.frontmatter.from.substring(0, 10));
+    const subeventsByDay = groupByFra(subEvents, event => event.frontmatter.from.substring(0, 10));
     return (
         <Layout>
             <h1 style={{marginBottom: '30px'}}>
@@ -18,15 +21,14 @@ export default ({data = {}}) => {
             </h1>
             <div className="row">
                 {Array.from(postsByDay, ([key, value]) => {
-                    const underposter = underposterByDay.get(key);
-                    return <Dag key={key} dag={key} poster={value} underposter={underposter} />
+                    const subeventsForDay = subeventsByDay.get(key);
+                    return <InlineDay key={key} day={key} events={value} subeventsForDay={subeventsForDay} />
                 })
                 }
             </div>
         </Layout>
     )
 }
-
 
 function groupByFra(list, keyGetter) {
     const map = new Map();
@@ -44,7 +46,12 @@ function groupByFra(list, keyGetter) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: {fields: [frontmatter___fra], order: ASC}) {
+    site {
+      siteMetadata {
+        currentFagsamling
+      }
+    }
+    allMarkdownRemark(sort: {fields: [frontmatter___from], order: ASC}) {
       totalCount
       edges {
         node {
@@ -55,13 +62,13 @@ export const query = graphql`
           }
           frontmatter {
             title
-            sted
-            fra
-            til
-            kategori
+            location
+            from
+            to
+            category
             type
             speaker
-            undersider
+            subevents
           }
           excerpt
         }

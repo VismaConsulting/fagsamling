@@ -3,6 +3,7 @@ module.exports = {
     title: `Visma Consulting Fagsamling`,
     description: `Websidene til fagsamlingene til Visma Consulting`,
     author: `@andersems`,
+    currentFagsamling: '2019-03'
   },
   plugins: [
     {
