@@ -1,5 +1,5 @@
 ---
-title: "Personvernet som begrensning for videre digitalisering"
+title: "Personvern som begrensning for digitalisering"
 kategori: "Talk"
 speaker: "Monica Verma"
 sted: "Auditoriet"
