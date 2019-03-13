@@ -14,6 +14,7 @@ export default ({data = {}}) => {
     const subEvents = posts.filter(event => event.frontmatter.type === 'underprogrampost');
     const postsByDay = groupByFra(mainEvents, event => event.frontmatter.from.substring(0, 10));
     const subeventsByDay = groupByFra(subEvents, event => event.frontmatter.from.substring(0, 10));
+    console.log(subeventsByDay);
     return (
         <Layout>
             <h1 style={{marginBottom: '30px'}}>

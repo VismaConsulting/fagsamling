@@ -11,8 +11,7 @@ const InlineDay = ({day, events, subeventsForDay}) => {
         <div className="col-sm">
             <h2>{capitalizeFirst(DateTime.fromISO(day).setLocale('nb').toFormat('EEEE'))}</h2>
             {events.map(event => {
-                return <InlineEvent key={event.id} event={event} subeventsForDay={subeventsForDay
-                } />
+                return <InlineEvent key={event.id} event={event} subeventsForDay={subeventsForDay} />
             })}
         </div>
     )

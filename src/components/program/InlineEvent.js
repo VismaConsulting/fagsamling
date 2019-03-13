@@ -8,7 +8,7 @@ const InlineEvent = ({event, subeventsForDay = []}) => {
     const {frontmatter} = event;
 
     const tidspunkt = DateTime.fromISO(frontmatter.from).setLocale('nb').toFormat('HH:mm');
-    const underposterTilSiden = frontmatter.undersider || [];
+    const underposterTilSiden = frontmatter.subevents || [];
     const underposterAaVise = subeventsForDay.filter(underpost => underposterTilSiden.includes(underpost.fields.slug));
     return (
         <div className="card programpost" style={{marginBottom: '10px', border: 'none', backgroundColor: '#F0F2F5'}}>
