@@ -3,7 +3,8 @@ module.exports = {
     title: `Visma Consulting Fagsamling`,
     description: `Websidene til fagsamlingene til Visma Consulting`,
     author: `@andersems`,
-    currentFagsamling: '2019-03'
+    currentFagsamling: '2019-03',
+    siteUrl: 'https://fagsamling.vismaconsulting.no'
   },
   plugins: [
     {
@@ -36,7 +37,6 @@ module.exports = {
         icon: `src/images/visma-just-logo.png`
       },
     },
-    `gatsby-plugin-breadcrumb`,
     // 'gatsby-plugin-offline',
     `gatsby-plugin-remove-serviceworker`
   ],

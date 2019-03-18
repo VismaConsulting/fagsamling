@@ -9,10 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import './layout.css'
 import Header from "./Header"
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const Layout = ({location, children}) => {
-    console.log(location);
+const Layout = ({children}) => {
     return (
         <>
             <Header/>
