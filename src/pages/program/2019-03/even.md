@@ -1,6 +1,7 @@
 ---
 title: "Hvordan jobbe med sikkerhet i prosjektene for hver disiplin"
 location: "Auditoriet"
+type: "underprogrampost"
 category: "Talk"
 speaker: "Even Lysen"
 from: "2019-03-29T17:15"
