@@ -1,5 +1,5 @@
 ---
-title: "Breakout Sessions"
+title: "Gruppeoppgaver"
 category: "Gruppeoppgaver"
 type: "container"
 from: "2019-03-30T10:30"
