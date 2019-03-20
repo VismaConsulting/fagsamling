@@ -1,5 +1,5 @@
 ---
-title: "Personvernet som begrensning for videre digitalisering"
+title: "Personvern som begrensning for digitalisering m/Monica Verma"
 category: "Talk"
 speaker: "Monica Verma"
 type: "underprogrampost"

@@ -1,5 +1,5 @@
 ---
-title: "Hvordan jobbe med sikkerhet i prosjektene for hver disiplin"
+title: "Teknisk track m/Even Lysen"
 location: "Auditoriet"
 type: "underprogrampost"
 category: "Talk"
