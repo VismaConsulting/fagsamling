@@ -20,3 +20,7 @@ subevents:
   - /program/2019-03/breakout/ai1/
   - /program/2019-03/breakout/ai2/
 ---
+
+Fra 14:00 til 15:00 blir det "breakout sessions". 
+
+Da kan du ta fri fra din faste gruppe, og møte hos 

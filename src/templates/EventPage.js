@@ -28,10 +28,11 @@ export default ({data}) => {
                 <div dangerouslySetInnerHTML={{__html: event.html}}/>
                 {event.fields.subevents.map(subevent => {
                     return (
-                        <div key={subevent.id} className="card programpost">
+                        <div key={subevent.id} className="card programpost" style={{marginBottom: '10px'}}>
                             <div className="card-body">
                                 {formatTime(subevent.frontmatter.from)} - {formatTime(subevent.frontmatter.to)} {subevent.frontmatter.title}
                                 <EventMetaData {...subevent.frontmatter} />
+                                {subevent.excerpt}
                             </div>
                         </div>
                     )
