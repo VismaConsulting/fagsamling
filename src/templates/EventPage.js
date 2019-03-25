@@ -1,37 +1,57 @@
 import React from "react"
-import { graphql } from "gatsby"
+import {graphql} from "gatsby"
 import Layout from "../components/layout/Layout"
 import {DateTime} from 'luxon'
+import EventMetaData from "../components/program/EventMetaData";
+import '../components/graphql/fragments/CommonEventFragment'
 
-const capitalizeFirst = function(dag) {
+const capitalizeFirst = function (dag) {
     return dag.charAt(0).toUpperCase() + dag.slice(1)
 };
 
-export default ({ data }) => {
-    const event = data.markdownRemark;
+export default ({data}) => {
+    const {event} = data;
     const weekday = capitalizeFirst(DateTime.fromISO(event.frontmatter.from).setLocale('nb').toFormat('EEEE'));
-    const from = DateTime.fromISO(event.frontmatter.from).toFormat('HH:mm');
-    const to = DateTime.fromISO(event.frontmatter.to).toFormat('HH:mm');
+
+    function formatTime(time) {
+        return DateTime.fromISO(time).toFormat('HH:mm');
+    }
+
+    const from = formatTime(event.frontmatter.from);
+    const to = formatTime(event.frontmatter.to);
     return (
         <Layout>
             <div>
                 <h3 style={{color: 'black'}}>{weekday} {from} - {to}</h3>
                 <h2>{event.frontmatter.title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: event.html }} />
+                <EventMetaData {...event.frontmatter} />
+                <div dangerouslySetInnerHTML={{__html: event.html}}/>
+                {event.fields.subevents.map(subevent => {
+                    return (
+                        <div key={subevent.id} className="card programpost">
+                            <div className="card-body">
+                                {formatTime(subevent.frontmatter.from)} - {formatTime(subevent.frontmatter.to)} {subevent.frontmatter.title}
+                                <EventMetaData {...subevent.frontmatter} />
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </Layout>
     )
 }
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        from
-        to
+export const query = graphql`  
+query($slug: String!) {
+    event: markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        subevents {
+          ...CommonEventFragment
+        }
       }
-    }
+      ...CommonEventFragment
   }
+}
+  
+  
 `

@@ -37,6 +37,7 @@ module.exports = {
         icon: `src/images/visma-just-logo.png`
       },
     },
+    `gatsby-plugin-modal-routing`,
     // 'gatsby-plugin-offline',
     `gatsby-plugin-remove-serviceworker`
   ],

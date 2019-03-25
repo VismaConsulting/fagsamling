@@ -2,8 +2,9 @@ import React from "react"
 import {graphql} from "gatsby"
 import Layout from "../components/layout/Layout"
 import InlineDay from "../components/program/InlineDay";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons'
+import '../components/graphql/fragments/CommonEventFragment'
 
 export default ({data = {}}) => {
     const {currentFagsamling} = data.site.siteMetadata;
@@ -11,9 +12,7 @@ export default ({data = {}}) => {
         .filter(item => item.node.fields.slug.includes(currentFagsamling))
         .map(item => item.node);
     const mainEvents = posts.filter(event => event.frontmatter.type !== 'underprogrampost');
-    const subEvents = posts.filter(event => event.frontmatter.type === 'underprogrampost');
     const postsByDay = groupByFra(mainEvents, event => event.frontmatter.from.substring(0, 10));
-    const subeventsByDay = groupByFra(subEvents, event => event.frontmatter.from.substring(0, 10));
     return (
         <Layout>
             <h1 style={{marginBottom: '30px'}}>
@@ -21,8 +20,7 @@ export default ({data = {}}) => {
             </h1>
             <div className="row">
                 {Array.from(postsByDay, ([key, value]) => {
-                    const subeventsForDay = subeventsByDay.get(key);
-                    return <InlineDay key={key} day={key} events={value} subeventsForDay={subeventsForDay} />
+                    return <InlineDay key={key} day={key} events={value} />
                 })
                 }
             </div>
@@ -55,22 +53,18 @@ export const query = graphql`
       totalCount
       edges {
         node {
-          id
-          html
+         ...CommonEventFragment
           fields {
-            slug
+            subevents {
+              id
+              html
+              fields {
+                slug
+              }
+              excerpt
+              ...CommonEventFragment
+            }
           }
-          frontmatter {
-            title
-            location
-            from
-            to
-            category
-            type
-            speaker
-            subevents
-          }
-          excerpt
         }
       }
     }
