@@ -10,7 +10,8 @@ const capitalizeFirst = function (dag) {
     return dag.charAt(0).toUpperCase() + dag.slice(1)
 };
 
-export default ({data}) => {
+export default ({location, data}) => {
+    console.log(location);
     const {event} = data;
     const weekday = capitalizeFirst(DateTime.fromISO(event.frontmatter.from).setLocale('nb').toFormat('EEEE'));
 
@@ -20,8 +21,19 @@ export default ({data}) => {
 
     const from = formatTime(event.frontmatter.from);
     const to = formatTime(event.frontmatter.to);
+    const breadcrumbs = [
+        {
+            label: "Program",
+            slug: "/program"
+        },
+        {
+            label: event.frontmatter.title,
+            slug: event.fields.slug,
+            current: true
+        }
+    ];
     return (
-        <Layout>
+        <Layout breadcrumbs={breadcrumbs}>
             <div>
                 <h3 style={{color: 'black'}}>{weekday} {from} - {to}</h3>
                 <h2>{event.frontmatter.title}</h2>

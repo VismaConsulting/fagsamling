@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Layout from "../components/layout/Layout"
 import SEO from "../components/layout/seo"
 
-const IndexPage = () => {
+const IndexPage = ({location}) => {
     return (
-        <Layout>
+        <Layout location={location}>
             <SEO title="Hjem" keywords={[`gatsby`, `application`, `react`]}/>
             <div className="jumbotron">
                 <h1 className="display-4">Velkommen til fagsamling!</h1>

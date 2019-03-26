@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons'
 import '../components/graphql/fragments/CommonEventFragment'
 
-export default ({data = {}}) => {
+export default ({location, data = {}}) => {
     const {currentFagsamling} = data.site.siteMetadata;
     const posts = data.allMarkdownRemark.edges
         .filter(item => item.node.fields.slug.includes(currentFagsamling))
@@ -14,7 +14,7 @@ export default ({data = {}}) => {
     const mainEvents = posts.filter(event => event.frontmatter.page_subtype !== 'subevent');
     const postsByDay = groupByFra(mainEvents, event => event.frontmatter.from.substring(0, 10));
     return (
-        <Layout>
+        <Layout location={location} crumbLabel="Program">
             <h1 style={{marginBottom: '30px'}}>
                 <FontAwesomeIcon style={{fontSize: '0.8em'}} icon={faCalendarAlt}/> Program
             </h1>
