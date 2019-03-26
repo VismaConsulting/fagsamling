@@ -10,17 +10,8 @@ const capitalizeFirst = function (dag) {
     return dag.charAt(0).toUpperCase() + dag.slice(1)
 };
 
-export default ({location, data}) => {
-    const {event} = data;
-    const weekday = capitalizeFirst(DateTime.fromISO(event.frontmatter.from).setLocale('nb').toFormat('EEEE'));
-
-    function formatTime(time) {
-        return DateTime.fromISO(time).toFormat('HH:mm');
-    }
-
-    const from = formatTime(event.frontmatter.from);
-    const to = formatTime(event.frontmatter.to);
-    const parentCrumb = location.state !== null ? location.state.parentCrumb : null
+function build_breadcrumbs(location, event) {
+    const parentCrumb = location.state ? location.state.parentCrumb : null
     const breadcrumbs = [
         {
             label: "Program",
@@ -35,6 +26,20 @@ export default ({location, data}) => {
             slug: event.fields.slug,
             current: true
         });
+    return breadcrumbs;
+}
+
+export default ({location, data}) => {
+    const {event} = data;
+    const weekday = capitalizeFirst(DateTime.fromISO(event.frontmatter.from).setLocale('nb').toFormat('EEEE'));
+
+    function formatTime(time) {
+        return DateTime.fromISO(time).toFormat('HH:mm');
+    }
+
+    const from = formatTime(event.frontmatter.from);
+    const to = formatTime(event.frontmatter.to);
+    const breadcrumbs = build_breadcrumbs(location, event);
     return (
         <Layout breadcrumbs={breadcrumbs}>
             <div>
