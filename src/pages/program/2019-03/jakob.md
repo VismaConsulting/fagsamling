@@ -1,6 +1,6 @@
 ---
 title: "Jakob Scharf"
-location: "Auditoriet"
+location: "Vika"
 category: "Talk"
 speaker: "Jakob Scharf"
 from: "2019-03-29T16:00"

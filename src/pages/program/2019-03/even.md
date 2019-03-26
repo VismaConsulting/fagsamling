@@ -1,6 +1,6 @@
 ---
 title: "Teknisk track m/Even Lysen"
-location: "Auditoriet"
+location: "Vika"
 page_type: "event"
 page_subtype: "subevent"
 category: "Talk"

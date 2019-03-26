@@ -51,10 +51,10 @@ export default ({data}) => {
                         return (
                             <div className="container card" key={speaker.id}>
                                 <div className="row card-body">
-                                    <div className="col-2">
+                                    <div className="col-sm-2">
                                         <Img fixed={speaker.frontmatter.thumbnail.childImageSharp.fixed}/>
                                     </div>
-                                    <div className="col-8">
+                                    <div className="col-sm-10">
                                         <h5>{speaker.frontmatter.name}</h5>
                                         <div dangerouslySetInnerHTML={{__html: speaker.html}}/>
                                     </div>

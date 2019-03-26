@@ -4,7 +4,7 @@ category: "Talk"
 speaker: "Monica Verma"
 page_type: "event"
 page_subtype: "subevent"
-location: "Auditoriet"
+location: "Aker"
 from: "2019-03-29T17:15"
 to: "2019-03-29T18:20"
 speakers:
