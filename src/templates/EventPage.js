@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql} from "gatsby"
+import {graphql, Link} from "gatsby"
 import Layout from "../components/layout/Layout"
 import {DateTime} from 'luxon'
 import EventMetaData from "../components/program/EventMetaData";
@@ -31,9 +31,16 @@ export default ({data}) => {
                     return (
                         <div key={subevent.id} className="card programpost" style={{marginBottom: '10px'}}>
                             <div className="card-body">
-                                {formatTime(subevent.frontmatter.from)} - {formatTime(subevent.frontmatter.to)} {subevent.frontmatter.title}
-                                <EventMetaData {...subevent.frontmatter} />
-                                {subevent.excerpt}
+                                <h6 className="card-title">
+                                    {formatTime(subevent.frontmatter.from)} - {formatTime(subevent.frontmatter.to)} {subevent.frontmatter.title}
+                                </h6>
+                                <div className="card-subtitle">
+                                    <EventMetaData {...subevent.frontmatter} />
+                                </div>
+                                <div className="card-text">
+                                    {subevent.excerpt}
+                                </div>
+                                <Link className="card-link btn btn-primary" to={subevent.fields.slug}>Gå til event</Link>
                             </div>
                         </div>
                     )
