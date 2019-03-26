@@ -18,6 +18,7 @@ exports.onCreateNode = ({ node, getNode, getNodesByType, createNodeId, actions }
             subeventIds = markdownNodes.filter(mdNode => {
                 const basePathLastLetterIndex = mdNode.fileAbsolutePath.indexOf(basePath) + basePath.length;
                 const fileRelativePath = mdNode.fileAbsolutePath.substring(basePathLastLetterIndex);
+                console.log(fileRelativePath.replace('.md', '/'))
                 return subevents.filter(subevent => fileRelativePath.replace('.md', '/').includes(subevent)).length > 0;
             }).map(mdNode => mdNode.id);
             console.log(subevents, subeventIds)
