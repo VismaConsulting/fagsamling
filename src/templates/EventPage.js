@@ -11,7 +11,6 @@ const capitalizeFirst = function (dag) {
 };
 
 export default ({location, data}) => {
-    console.log(location);
     const {event} = data;
     const weekday = capitalizeFirst(DateTime.fromISO(event.frontmatter.from).setLocale('nb').toFormat('EEEE'));
 
@@ -21,17 +20,21 @@ export default ({location, data}) => {
 
     const from = formatTime(event.frontmatter.from);
     const to = formatTime(event.frontmatter.to);
+    const parentCrumb = location.state !== null ? location.state.parentCrumb : null
     const breadcrumbs = [
         {
             label: "Program",
             slug: "/program"
-        },
+        }];
+    if (parentCrumb !== null) {
+        breadcrumbs.push(parentCrumb);
+    }
+    breadcrumbs.push(
         {
             label: event.frontmatter.title,
             slug: event.fields.slug,
             current: true
-        }
-    ];
+        });
     return (
         <Layout breadcrumbs={breadcrumbs}>
             <div>
@@ -40,6 +43,10 @@ export default ({location, data}) => {
                 <EventMetaData {...event.frontmatter} />
                 <div dangerouslySetInnerHTML={{__html: event.html}}/>
                 {event.fields.subevents.map(subevent => {
+                    const parentCrumb = {
+                        label: event.frontmatter.title,
+                        slug: event.fields.slug
+                    };
                     return (
                         <div key={subevent.id} className="card programpost" style={{marginBottom: '10px'}}>
                             <div className="card-body">
@@ -52,7 +59,8 @@ export default ({location, data}) => {
                                 <div className="card-text">
                                     {subevent.excerpt}
                                 </div>
-                                <Link className="card-link btn btn-primary" to={subevent.fields.slug}>Gå til event</Link>
+                                <Link state={{parentCrumb}} className="card-link btn btn-primary"
+                                      to={subevent.fields.slug}>Gå til event</Link>
                             </div>
                         </div>
                     )

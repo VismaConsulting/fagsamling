@@ -37,21 +37,6 @@ module.exports = {
         icon: `src/images/visma-just-logo.png`
       },
     },
-    {
-      resolve: `gatsby-plugin-breadcrumb`,
-      options: {
-        defaultCrumb: {
-          location: {
-            state: { crumbClicked: false },
-            pathname: "/",
-          },
-          crumbLabel: "Home",
-          crumbSeparator: " / ",
-          crumbStyle: { color: "#666" },
-          crumbActiveStyle: { color: "orange" },
-        },
-      },
-    },
     `gatsby-plugin-modal-routing`,
     // 'gatsby-plugin-offline',
     `gatsby-plugin-remove-serviceworker`

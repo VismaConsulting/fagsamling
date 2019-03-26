@@ -5,7 +5,7 @@ import './navbar-overrides.css'
 import {Link} from "gatsby"
 import {Nav, Navbar, NavbarBrand, NavItem, Collapse, NavbarToggler} from "reactstrap"
 
-const Header = () => {
+const Header = ({breadcrumbs}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (<Navbar color="light" light expand="md" fixed="top">
@@ -23,6 +23,20 @@ const Header = () => {
                     </NavItem>
                 </Nav>
             </Collapse>
+
+            {breadcrumbs && <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    {breadcrumbs.map(crumb => {
+                            const classNames = "breadcrumb-item" + (crumb.current ? ' active' : '');
+                            const label = crumb.current ? crumb.label : <a href={crumb.slug}>{crumb.label}</a>
+                            return (
+                                <li key={crumb.label} className={classNames}>{label}</li>
+                            )
+                        }
+                    )}
+                </ol>
+            </nav>
+            }
         </Navbar>
     )
 }

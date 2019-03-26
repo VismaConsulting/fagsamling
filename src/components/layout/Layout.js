@@ -13,7 +13,7 @@ import Header from "./Header"
 const Layout = ({children, breadcrumbs}) => {
     return (
         <>
-            <Header/>
+            <Header breadcrumbs={breadcrumbs}/>
             {breadcrumbs && <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     {breadcrumbs.map(crumb => {
