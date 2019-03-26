@@ -20,6 +20,7 @@ exports.onCreateNode = ({ node, getNode, getNodesByType, createNodeId, actions }
                 const fileRelativePath = mdNode.fileAbsolutePath.substring(basePathLastLetterIndex);
                 return subevents.filter(subevent => fileRelativePath.replace('.md', '/').includes(subevent)).length > 0;
             }).map(mdNode => mdNode.id);
+            console.log(subevents, subeventIds)
         }
         let speakers = [];
         const speaker_links = node.frontmatter.speakers;
