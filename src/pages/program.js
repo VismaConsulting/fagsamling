@@ -5,6 +5,7 @@ import InlineDay from "../components/program/InlineDay";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons'
 import '../components/graphql/fragments/CommonEventFragment'
+import groupBy from "../utils/groupBy";
 
 export default ({location, data = {}}) => {
     const {currentFagsamling} = data.site.siteMetadata;
@@ -12,7 +13,7 @@ export default ({location, data = {}}) => {
         .filter(item => item.node.fields.slug.includes(currentFagsamling))
         .map(item => item.node);
     const mainEvents = posts.filter(event => event.frontmatter.page_subtype !== 'subevent');
-    const postsByDay = groupByFra(mainEvents, event => event.frontmatter.from.substring(0, 10));
+    const postsByDay = groupBy(mainEvents, event => event.frontmatter.from.substring(0, 10));
     return (
         <Layout location={location} crumbLabel="Program">
             <h1 style={{marginBottom: '30px'}}>
@@ -26,20 +27,6 @@ export default ({location, data = {}}) => {
             </div>
         </Layout>
     )
-}
-
-function groupByFra(list, keyGetter) {
-    const map = new Map();
-    list.forEach((item) => {
-        const key = keyGetter(item);
-        const collection = map.get(key);
-        if (!collection) {
-            map.set(key, [item]);
-        } else {
-            collection.push(item);
-        }
-    });
-    return map;
 }
 
 export const query = graphql`

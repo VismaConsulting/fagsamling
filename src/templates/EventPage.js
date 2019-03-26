@@ -47,7 +47,9 @@ export default ({location, data}) => {
                 <h2>{event.frontmatter.title}</h2>
                 <EventMetaData {...event.frontmatter} />
                 <div dangerouslySetInnerHTML={{__html: event.html}}/>
-                {event.fields.subevents.map(subevent => {
+                {event.fields.subevents
+                    .sort((a, b) => a.frontmatter.from.localeCompare(b.frontmatter.from))
+                    .map(subevent => {
                     const parentCrumb = {
                         label: event.frontmatter.title,
                         slug: event.fields.slug
@@ -70,6 +72,7 @@ export default ({location, data}) => {
                         </div>
                     )
                 })}
+                {/*<ParallelleTracks event={event}/>*/}
                 {event.fields.speakers.length > 0 && <div>
                     <h3>About the speaker</h3>
                     {event.fields.speakers.map(speaker => {

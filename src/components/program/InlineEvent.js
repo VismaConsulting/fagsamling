@@ -14,10 +14,12 @@ const InlineEvent = ({event}) => {
                 <h6><a href={event.fields.slug}>{tidspunkt} - {frontmatter.title}</a></h6>
                 <EventMetaData {...frontmatter} />
                 <div>
-                    {underposterAaVise.map(subevent => {
-                        const fra = subevent.frontmatter.from.split('T')[1];
-                        const til = subevent.frontmatter.to.split('T')[1];
-                        return <div style={{fontSize: '0.7em'}} key={subevent.id}>
+                    {underposterAaVise
+                        .sort((a, b) => a.frontmatter.from.localeCompare(b.frontmatter.from))
+                        .map(subevent => {
+                            const fra = subevent.frontmatter.from.split('T')[1];
+                            const til = subevent.frontmatter.to.split('T')[1];
+                            return <div style={{fontSize: '0.7em'}} key={subevent.id}>
                             {fra}-{til} <a href={subevent.fields.slug}>{subevent.frontmatter.title}</a>
                         </div>
                     })}
