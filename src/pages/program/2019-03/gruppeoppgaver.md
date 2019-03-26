@@ -22,6 +22,6 @@ subevents:
   - /program/2019-03/breakout/ai2
 ---
 
-Fra 14:00 til 15:00 blir det "breakout sessions". 
+Fra 13:00 til 14:00 blir det "breakout sessions". 
 
 Da kan du ta fri fra din faste gruppe, og møte hos prosjektledelse for å høre om GDPR, Java for å få en introduksjon til Burp Suite, eller hos JavaScript for å prate om sårbarheter i NPM.
