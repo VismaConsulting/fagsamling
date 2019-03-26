@@ -2,10 +2,13 @@
 title: " Informasjonssikkerhet som støtter og integreres i forretningssiden m/Monica Verma"
 category: "Talk"
 speaker: "Monica Verma"
-type: "underprogrampost"
+page_type: "event"
+page_subtype: "subevent"
 location: "Auditoriet"
 from: "2019-03-29T17:15"
 to: "2019-03-29T18:20"
+speakers:
+  - /speakers/2019-03/monica-verma/
 ---
 Enda flere bedrifter har ekstreme krav til digitalisering og innovasjon - ikke minst mot globale aktører. Informasjonssikkerhet har blitt kritiske suksessfaktorer for næringslivet til å bygge kundetillitt. Så hva er de største utfordringene ledere og sikkerhetssjefer står overfor? Hva er de viktigste rådene for å understøtte forretningsmålene?
 

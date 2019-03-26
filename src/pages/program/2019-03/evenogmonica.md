@@ -1,6 +1,7 @@
 ---
 title: "Parallelle talks"
 category: "Talk"
+page_type: "event"
 from: "2019-03-29T17:15"
 to: "2019-03-29T18:00"
 subevents:

@@ -17,7 +17,8 @@ fragment CommonEventFragment on MarkdownRemark {
       from
       to
       speaker
-      type
+      page_type
+      page_subtype  
       category
       location
     }

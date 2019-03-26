@@ -21,6 +21,16 @@ exports.onCreateNode = ({ node, getNode, getNodesByType, createNodeId, actions }
                 return subevents.filter(subevent => fileRelativePath.replace('.md', '/').includes(subevent)).length > 0;
             }).map(mdNode => mdNode.id);
         }
+        let speakers = [];
+        const speaker_links = node.frontmatter.speakers;
+        if (speaker_links) {
+            const markdownNodes = getNodesByType(`MarkdownRemark`);
+            speakers = markdownNodes.filter(mdNode => {
+                const basePathLastLetterIndex = mdNode.fileAbsolutePath.indexOf(basePath) + basePath.length;
+                const fileRelativePath = mdNode.fileAbsolutePath.substring(basePathLastLetterIndex);
+                return speaker_links.filter(speaker => fileRelativePath.replace('.md', '/').includes(speaker)).length > 0
+            }).map(mdNode => mdNode.id);
+        }
         createNodeField({
             node,
             name: `slug`,
@@ -31,14 +41,31 @@ exports.onCreateNode = ({ node, getNode, getNodesByType, createNodeId, actions }
             name: 'subevents___NODE',
             value: subeventIds
         })
+        createNodeField({
+            node,
+            name: 'speakers___NODE',
+            value: speakers
+        })
     }
+}
+
+function createEvent(createPage, node) {
+    createPage({
+        path: node.fields.slug,
+        component: path.resolve(`./src/templates/EventPage.js`),
+        context: {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            slug: node.fields.slug,
+        },
+    })
 }
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     return graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: {frontmatter: { page_type: { eq: "event" }}}) {
         edges {
           node {
             fields {
@@ -50,15 +77,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-            createPage({
-                path: node.fields.slug,
-                component: path.resolve(`./src/templates/EventPage.js`),
-                context: {
-                    // Data passed to context is available
-                    // in page queries as GraphQL variables.
-                    slug: node.fields.slug,
-                },
-            })
+            createEvent(createPage, node);
         })
     })
 }

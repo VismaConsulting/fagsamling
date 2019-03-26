@@ -11,7 +11,7 @@ export default ({data = {}}) => {
     const posts = data.allMarkdownRemark.edges
         .filter(item => item.node.fields.slug.includes(currentFagsamling))
         .map(item => item.node);
-    const mainEvents = posts.filter(event => event.frontmatter.type !== 'underprogrampost');
+    const mainEvents = posts.filter(event => event.frontmatter.page_subtype !== 'subevent');
     const postsByDay = groupByFra(mainEvents, event => event.frontmatter.from.substring(0, 10));
     return (
         <Layout>
@@ -49,7 +49,7 @@ export const query = graphql`
         currentFagsamling
       }
     }
-    allMarkdownRemark(sort: {fields: [frontmatter___from], order: ASC}) {
+    allMarkdownRemark(filter: {frontmatter: { page_type: { eq: "event" }}}, sort: {fields: [frontmatter___from], order: ASC}) {
       totalCount
       edges {
         node {

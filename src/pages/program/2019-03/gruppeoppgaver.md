@@ -3,6 +3,7 @@ title: "Gruppeoppgaver"
 category: "Gruppeoppgaver"
 from: "2019-03-30T10:30"
 to: "2019-03-30T16:15"
+page_type: "event"
 subevents:
   - /program/2019-03/breakout/toppdotnet1/
   - /program/2019-03/breakout/toppdotnet2/

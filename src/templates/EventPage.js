@@ -4,6 +4,7 @@ import Layout from "../components/layout/Layout"
 import {DateTime} from 'luxon'
 import EventMetaData from "../components/program/EventMetaData";
 import '../components/graphql/fragments/CommonEventFragment'
+import Img from "gatsby-image"
 
 const capitalizeFirst = function (dag) {
     return dag.charAt(0).toUpperCase() + dag.slice(1)
@@ -37,22 +38,54 @@ export default ({data}) => {
                         </div>
                     )
                 })}
+                {event.fields.speakers.length > 0 && <div>
+                    <h3>About the speaker</h3>
+                    {event.fields.speakers.map(speaker => {
+                        return (
+                            <div className="container card" key={speaker.id}>
+                                <div className="row card-body">
+                                    <div className="col-2">
+                                        <Img fixed={speaker.frontmatter.thumbnail.childImageSharp.fixed}/>
+                                    </div>
+                                    <div className="col-8">
+                                        <h5>{speaker.frontmatter.name}</h5>
+                                        <div dangerouslySetInnerHTML={{__html: speaker.html}}/>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
+                }
             </div>
         </Layout>
     )
 }
 
-export const query = graphql`  
-query($slug: String!) {
-    event: markdownRemark(fields: { slug: { eq: $slug } }) {
-      fields {
-        subevents {
-          ...CommonEventFragment
+export const query = graphql`
+    query($slug: String!) {
+        event: markdownRemark(fields: { slug: { eq: $slug } }) {
+            fields {
+                speakers {
+                    id
+                    html
+                    frontmatter {
+                        name
+                        thumbnail {
+                            childImageSharp {
+                                fixed(width: 125, height: 125, cropFocus: NORTH) {
+                                    ...GatsbyImageSharpFixed
+                                }
+                            }
+                        }
+                    }
+                }
+                subevents {
+                    ...CommonEventFragment
+                }
+            }
+            ...CommonEventFragment
         }
-      }
-      ...CommonEventFragment
-  }
-}
-  
-  
+    }
 `
