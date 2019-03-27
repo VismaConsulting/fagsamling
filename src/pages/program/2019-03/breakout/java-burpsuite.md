@@ -1,5 +1,5 @@
 ---
-title: "Java/Test - Burpsuite"
+title: "Burpsuite"
 category: "Breakout session"
 page_type: "event"
 page_subtype: "subevent"

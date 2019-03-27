@@ -4,6 +4,7 @@ category: "Gruppeoppgaver"
 from: "2019-03-30T13:00"
 to: "2019-03-30T14:00"
 page_type: "event"
+description: 4 felles sessions som man kan delta på.
 subevents:
   - /program/2019-03/breakout/toppdotnet-oppgaver-del2/
   - /program/2019-03/breakout/fux-del2/

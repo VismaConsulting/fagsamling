@@ -22,6 +22,7 @@ fragment CommonEventFragment on MarkdownRemark {
       category
       location
       group
+      description  
     }
 }
 `;

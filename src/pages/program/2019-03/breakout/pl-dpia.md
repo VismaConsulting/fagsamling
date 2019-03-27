@@ -1,5 +1,5 @@
 ---
-title: "Prosjektledelse -  DPIA - når og hvordan gjennomfører du en personvernkonsekvensvurdering"
+title: "DPIA - når og hvordan gjennomfører du en personvernkonsekvensvurdering"
 category: "Breakout session"
 page_type: "event"
 page_subtype: "subevent"

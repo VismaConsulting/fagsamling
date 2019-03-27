@@ -22,13 +22,18 @@ const InlineEvent = ({event}) => {
             <div className="card-body" style={{paddingBottom: '5px'}}>
                 <h6><a href={event.fields.slug}>{tidspunkt} - {frontmatter.title}</a></h6>
                 <EventMetaData {...frontmatter} />
+                <p style={{fontSize: '0.8em'}}>{frontmatter.description}</p>
                 <div>
                     {underposterAaVise
                         .sort(eventSort)
                         .map(subevent => {
+                            const style = {
+                                fontSize: '0.7em',
+                                fontWeight: subevent.frontmatter.category === 'Breakout session' ? 'bold' : 'normal'
+                            };
                             const fra = subevent.frontmatter.from.split('T')[1];
                             const til = subevent.frontmatter.to.split('T')[1];
-                            return <div style={{fontSize: '0.7em'}} key={subevent.id}>
+                            return <div style={style} key={subevent.id}>
                             {fra}-{til} <a href={subevent.fields.slug}>{subevent.frontmatter.title}</a>
                         </div>
                     })}

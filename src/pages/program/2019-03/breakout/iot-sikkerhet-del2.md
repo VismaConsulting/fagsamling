@@ -1,5 +1,5 @@
 ---
-title: "Sikkerhet - Old Skool Hacking - Smashing stacks for fun and profit"
+title: "Old Skool Hacking - Smashing stacks for fun and profit"
 category: "Breakout session"
 page_type: "event"
 page_subtype: "subevent"
