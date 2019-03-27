@@ -8,7 +8,6 @@ subevents:
   - /program/2019-03/breakout/toppdotnet-oppgaver-del1/
   - /program/2019-03/breakout/fux-del1/
   - /program/2019-03/breakout/java-webgoat-del1/
-  - /program/2019-03/breakout/iot-sikkerhet-del1/
   - /program/2019-03/breakout/test/
   - /program/2019-03/breakout/js-websikkerhet/
   - /program/2019-03/breakout/ai1/

@@ -9,7 +9,6 @@ subevents:
   - /program/2019-03/breakout/toppdotnet-gjennomgang/
   - /program/2019-03/breakout/fux-del3/
   - /program/2019-03/breakout/java-webgoat-del2/
-  - /program/2019-03/breakout/iot-sikkerhet-del3/
   - /program/2019-03/breakout/pl-ros/
   - /program/2019-03/breakout/pl-gdpr/
   - /program/2019-03/breakout/js-sikkerhetsoppgaver/
