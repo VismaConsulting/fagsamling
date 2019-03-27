@@ -1,5 +1,5 @@
 ---
-title: "JavaScript - Grunnleggende websikkerhet og sårbarheter (XSS, XSRF, CORS)"
+title: "Grunnleggende websikkerhet og sårbarheter (XSS, XSRF, CORS)"
 category: "Gruppeoppgave"
 page_type: "event"
 page_subtype: "subevent"

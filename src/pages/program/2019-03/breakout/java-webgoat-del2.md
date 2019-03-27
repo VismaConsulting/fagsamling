@@ -1,5 +1,5 @@
 ---
-title: "Java - WebGoat"
+title: "WebGoat"
 category: "Gruppeoppgave"
 page_type: "event"
 page_subtype: "subevent"

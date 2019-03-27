@@ -5,6 +5,7 @@ import {DateTime} from 'luxon'
 import EventMetaData from './EventMetaData'
 import ConditionalStar from './ConditionalStar';
 import eventSort from "../../utils/eventSort";
+import classnames from 'classnames'
 
 const InlineEvent = ({event}) => {
     const {frontmatter} = event;
@@ -28,7 +29,7 @@ const InlineEvent = ({event}) => {
                         .map(subevent => {
                             const style = {
                                 fontSize: '0.9em',
-                                fontWeight: subevent.frontmatter.category === 'Breakout session' ? 'bold' : 'normal'
+                                fontWeight: subevent.frontmatter.category === 'Breakout session' ? '500' : 'normal'
                             };
                             const parentCrumb = {
                                 label: event.frontmatter.title,
@@ -36,11 +37,18 @@ const InlineEvent = ({event}) => {
                             };
                             const from = subevent.frontmatter.from.split('T')[1];
                             const divergingTime = from !== tidspunkt ? from + " -" : null;
+                            const itemClassname = classnames(
+                                'list-group-item',
+                                'list-group-item-action',
+                                'd-flex',
+                                'justify-content-between',
+                                'align-items-center'
+                            )
                             return <Link key={subevent.id}
                                          state={{parentCrumb}}
                                          to={subevent.fields.slug}
-                                         className="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-center"
-                                         style={{fontSize: style.fontSize, backgroundColor: '#eceef1'
+                                         className={itemClassname}
+                                         style={{fontSize: style.fontSize, backgroundColor: '#eceef1', fontWeight: style.fontWeight
                                          }}>
                                 {divergingTime} {subevent.frontmatter.title}
 
