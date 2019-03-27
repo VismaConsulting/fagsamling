@@ -33,8 +33,8 @@ const InlineEvent = ({event}) => {
                             };
                             const fra = subevent.frontmatter.from.split('T')[1];
                             const til = subevent.frontmatter.to.split('T')[1];
-                            return <div style={style} key={subevent.id}>
-                            {fra}-{til} <a href={subevent.fields.slug}>{subevent.frontmatter.title}</a>
+                            return <div style={{fontSize: style.fontSize}} key={subevent.id}>
+                            {fra}-{til} <a style={{fontWeight: style.fontWeight}} href={subevent.fields.slug}>{subevent.frontmatter.title}</a>
                         </div>
                     })}
                 </div>
