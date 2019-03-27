@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, getNode, getNodesByType, actions }) => {
         const subevents = node.frontmatter.subevents;
         let subeventIds = [];
         const markdownNodes = getNodesByType(`MarkdownRemark`);
-        console.log("# of markdown nodes", markdownNodes.lenght);
+        console.log("# of markdown nodes", markdownNodes.length);
         if (subevents) {
             subeventIds = markdownNodes.filter(mdNode => {
                 const basePathLastLetterIndex = mdNode.fileAbsolutePath.indexOf(basePath) + basePath.length;
