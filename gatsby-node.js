@@ -6,27 +6,25 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-exports.onCreateNode = ({ node, getNode, getNodesByType, createNodeId, actions }) => {
+exports.onCreateNode = ({ node, getNode, getNodesByType, actions }) => {
     const { createNodeField } = actions
     if (node.internal.type === `MarkdownRemark`) {
         const basePath = `pages`;
         const slug = createFilePath({ node, getNode, basePath })
         const subevents = node.frontmatter.subevents;
         let subeventIds = [];
+        const markdownNodes = getNodesByType(`MarkdownRemark`);
+        console.log("# of markdown nodes", markdownNodes.lenght);
         if (subevents) {
-            const markdownNodes = getNodesByType(`MarkdownRemark`);
             subeventIds = markdownNodes.filter(mdNode => {
                 const basePathLastLetterIndex = mdNode.fileAbsolutePath.indexOf(basePath) + basePath.length;
                 const fileRelativePath = mdNode.fileAbsolutePath.substring(basePathLastLetterIndex);
-                console.log(fileRelativePath.replace('.md', '/'))
                 return subevents.filter(subevent => fileRelativePath.replace('.md', '/').includes(subevent)).length > 0;
             }).map(mdNode => mdNode.id);
-            console.log(subevents, subeventIds)
         }
         let speakers = [];
         const speaker_links = node.frontmatter.speakers;
         if (speaker_links) {
-            const markdownNodes = getNodesByType(`MarkdownRemark`);
             speakers = markdownNodes.filter(mdNode => {
                 const basePathLastLetterIndex = mdNode.fileAbsolutePath.indexOf(basePath) + basePath.length;
                 const fileRelativePath = mdNode.fileAbsolutePath.substring(basePathLastLetterIndex);
