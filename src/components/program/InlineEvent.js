@@ -44,8 +44,8 @@ const InlineEvent = ({event}) => {
                                          }}>
                                 {divergingTime} {subevent.frontmatter.title}
 
-                                <div style={{display: 'inline-block'}}>
-                                    <span className="badge" style={{fontSize: '1.2em'}}>
+                                <div style={{display: 'inline-block'}} className="d-flex">
+                                    <span className="badge" style={{fontSize: '0.8em'}}>
                                         <ConditionalStar category={subevent.frontmatter.category} />
                                     </span>
                                     <span className="badge badge-primary" style={{fontSize: '0.7em', marginRight: '2px'}}>
