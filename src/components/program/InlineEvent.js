@@ -3,6 +3,15 @@ import './list-group-programpost-overrides.css'
 import {DateTime} from 'luxon'
 import EventMetaData from './EventMetaData'
 
+const eventSort = (a, b) => {
+    let result = 0;
+    if (a.frontmatter.group && b.frontmatter.group) {
+        result = a.frontmatter.group.localeCompare(b.frontmatter.group)
+    }
+    return result;
+
+};
+
 const InlineEvent = ({event}) => {
     const {frontmatter} = event;
 
@@ -15,7 +24,7 @@ const InlineEvent = ({event}) => {
                 <EventMetaData {...frontmatter} />
                 <div>
                     {underposterAaVise
-                        .sort((a, b) => a.frontmatter.from.localeCompare(b.frontmatter.from))
+                        .sort(eventSort)
                         .map(subevent => {
                             const fra = subevent.frontmatter.from.split('T')[1];
                             const til = subevent.frontmatter.to.split('T')[1];

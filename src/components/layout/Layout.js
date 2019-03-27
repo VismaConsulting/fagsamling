@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import './layout.css'
 import Header from "./Header"
 
-const Layout = ({children, breadcrumbs}) => {
+const Layout = ({children, breadcrumbs, fullWidth}) => {
+    const containerClass = fullWidth ? 'container-fluid' : 'container';
     return (
         <>
             <Header />
@@ -27,7 +28,7 @@ const Layout = ({children, breadcrumbs}) => {
                 </ol>
             </nav></div>
             }
-            <main role="main" className="container">{children}</main>
+            <main role="main" className={containerClass}>{children}</main>
         </>
     );
 }

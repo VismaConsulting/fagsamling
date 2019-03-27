@@ -21,6 +21,7 @@ fragment CommonEventFragment on MarkdownRemark {
       page_subtype  
       category
       location
+      group
     }
 }
 `;

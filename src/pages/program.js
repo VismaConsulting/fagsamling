@@ -9,7 +9,8 @@ import groupBy from "../utils/groupBy";
 
 export default ({location, data = {}}) => {
     const {currentFagsamling} = data.site.siteMetadata;
-    const posts = data.allMarkdownRemark.edges
+    console.log(data.events.edges)
+    const posts = data.events.edges
         .filter(item => item.node.fields.slug.includes(currentFagsamling))
         .map(item => item.node);
     const mainEvents = posts.filter(event => event.frontmatter.page_subtype !== 'subevent');
@@ -36,7 +37,7 @@ export const query = graphql`
         currentFagsamling
       }
     }
-    allMarkdownRemark(filter: {frontmatter: { page_type: { eq: "event" }}}, sort: {fields: [frontmatter___from], order: ASC}) {
+    events: allMarkdownRemark(filter: {frontmatter: { page_type: { eq: "event" }}}, sort: {fields: [frontmatter___from], order: ASC}) {
       totalCount
       edges {
         node {

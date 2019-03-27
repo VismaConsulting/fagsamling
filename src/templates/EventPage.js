@@ -5,6 +5,7 @@ import {DateTime} from 'luxon'
 import EventMetaData from "../components/program/EventMetaData";
 import '../components/graphql/fragments/CommonEventFragment'
 import Img from "gatsby-image"
+import ParallelleTracks from "../components/program/ParallelleTracks";
 
 const capitalizeFirst = function (dag) {
     return dag.charAt(0).toUpperCase() + dag.slice(1)
@@ -41,7 +42,7 @@ export default ({location, data}) => {
     const to = formatTime(event.frontmatter.to);
     const breadcrumbs = build_breadcrumbs(location, event);
     return (
-        <Layout breadcrumbs={breadcrumbs}>
+        <Layout breadcrumbs={breadcrumbs} fullWidth={false}>
             <div>
                 <h3 style={{color: 'black'}}>{weekday} {from} - {to}</h3>
                 <h2>{event.frontmatter.title}</h2>
