@@ -1,12 +1,12 @@
 ---
-title: "Topp.NET - Sikkerhetsoppgaver"
+title: "Sikkerhetsoppgaver .NET"
 category: "Gruppeoppgave"
 page_type: "event"
 page_subtype: "subevent"
 from: "2019-03-30T13:00"
 to: "2019-03-30T14:00"
 location: Nyland
-group: ms
+group: ".NET"
 ---
 
-Topp.NET Sikkerhetsoppgaver hele dagen, hvor det mer mulig å hoppe inn og ut. Får bare dårligere tid to å løse alle oppgavene.
+Løsning av sikkerhetsoppgaver hele dagen.

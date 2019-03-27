@@ -1,5 +1,5 @@
 ---
-title: " Informasjonssikkerhet som støtter og integreres i forretningssiden m/Monica Verma"
+title: " Informasjonssikkerhet som støtter og integreres i forretningssiden"
 category: "Talk"
 speaker: "Monica Verma"
 page_type: "event"

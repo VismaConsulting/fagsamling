@@ -1,7 +1,6 @@
 import React from "react"
 import {Link} from "gatsby"
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Layout from "../components/layout/Layout"
 import SEO from "../components/layout/seo"
 

@@ -20,6 +20,7 @@
     "gatsby-plugin-remove-trailing-slashes": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.28",
     "gatsby-plugin-sitemap": "^2.0.9",
+    "gatsby-remark-images": "^3.0.10",
     "gatsby-source-filesystem": "^2.0.25",
     "gatsby-transformer-remark": "^2.3.3",
     "gatsby-transformer-sharp": "^2.1.17",
@@ -32,8 +33,13 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
+    "babel-jest": "^24.5.0",
+    "babel-preset-gatsby": "^0.1.10",
     "gh-pages": "^2.0.1",
-    "prettier": "^1.16.4"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.5.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.5"
   },
   "keywords": [
     "gatsby"
@@ -45,7 +51,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "jest",
     "deploy": "gh-pages -d public -b gh-pages -t"
   },
   "repository": {

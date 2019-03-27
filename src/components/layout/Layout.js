@@ -7,7 +7,9 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './layout.css'
+import '../../styles/global.css'
 import Header from "./Header"
 
 const Layout = ({children, breadcrumbs, fullWidth}) => {

@@ -1,8 +1,8 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMapMarker, faUser} from "@fortawesome/free-solid-svg-icons";
+import {faMapMarker, faLocationArrow, faUser, faUsers} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const EventMetaData = ({kategori, speaker, location}) => {
+const EventMetaData = ({kategori, speaker, location, group}) => {
     return (
         <ul style={{marginBottom: '10px'}} className="list-group list-group-horizontal">
             {kategori &&
@@ -16,6 +16,10 @@ const EventMetaData = ({kategori, speaker, location}) => {
             {location && <li className="list-group-item">
                 <span className="badge"><FontAwesomeIcon icon={faMapMarker}/></span>
                 {location}
+            </li>}
+            {group && <li className="list-group-item">
+                <span className="badge"><FontAwesomeIcon icon={faUsers}/></span>
+                {group}
             </li>}
         </ul>
     );

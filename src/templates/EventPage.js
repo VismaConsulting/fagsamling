@@ -5,7 +5,8 @@ import {DateTime} from 'luxon'
 import EventMetaData from "../components/program/EventMetaData";
 import '../components/graphql/fragments/CommonEventFragment'
 import Img from "gatsby-image"
-import ParallelleTracks from "../components/program/ParallelleTracks";
+import ConditionalStar from "../components/program/ConditionalStar";
+import eventSort from "../utils/eventSort";
 
 const capitalizeFirst = function (dag) {
     return dag.charAt(0).toUpperCase() + dag.slice(1)
@@ -18,7 +19,7 @@ function build_breadcrumbs(location, event) {
             label: "Program",
             slug: "/program"
         }];
-    if (parentCrumb !== null) {
+    if (parentCrumb) {
         breadcrumbs.push(parentCrumb);
     }
     breadcrumbs.push(
@@ -45,21 +46,30 @@ export default ({location, data}) => {
         <Layout breadcrumbs={breadcrumbs} fullWidth={false}>
             <div>
                 <h3 style={{color: 'black'}}>{weekday} {from} - {to}</h3>
-                <h2>{event.frontmatter.title}</h2>
+                <h2>{event.frontmatter.title}<ConditionalStar category={event.frontmatter.category} />
+                </h2>
                 <EventMetaData {...event.frontmatter} />
+                {!!event.frontmatter.thumbnail && <div className="row">
+                    <div className="col-sm-3">
+                        <Img fluid={event.frontmatter.thumbnail.childImageSharp.fluid} />
+                    </div>
+                </div>}
                 <div dangerouslySetInnerHTML={{__html: event.html}}/>
                 {event.fields.subevents
-                    .sort((a, b) => a.frontmatter.from.localeCompare(b.frontmatter.from))
+                    .sort(eventSort)
                     .map(subevent => {
                     const parentCrumb = {
                         label: event.frontmatter.title,
                         slug: event.fields.slug
                     };
+                    const backgroundColor = subevent.frontmatter.category === 'Breakout session' ? '#F0F2F5' : 'white';
                     return (
-                        <div key={subevent.id} className="card programpost" style={{marginBottom: '10px'}}>
+                        <div key={subevent.id} className="card programpost" style={{marginBottom: '10px', backgroundColor}}>
                             <div className="card-body">
                                 <h6 className="card-title">
-                                    {formatTime(subevent.frontmatter.from)} - {formatTime(subevent.frontmatter.to)} {subevent.frontmatter.title}
+                                    <Link state={{parentCrumb}}
+                                          to={subevent.fields.slug}>{formatTime(subevent.frontmatter.from)} - {formatTime(subevent.frontmatter.to)} {subevent.frontmatter.title}</Link>
+                                    <ConditionalStar category={subevent.frontmatter.category} />
                                 </h6>
                                 <div className="card-subtitle">
                                     <EventMetaData {...subevent.frontmatter} />
@@ -122,6 +132,15 @@ export const query = graphql`
                 }
             }
             ...CommonEventFragment
+            frontmatter {
+                thumbnail {
+                    childImageSharp {
+                        fluid(maxWidth: 200) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
         }
     }
 `
