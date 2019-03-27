@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMapMarker, faLocationArrow, faUser, faUsers} from "@fortawesome/free-solid-svg-icons";
+import {faMapMarker, faUser, faUsers} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 const EventMetaData = ({kategori, speaker, location, group}) => {
