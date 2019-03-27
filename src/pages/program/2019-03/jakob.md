@@ -1,5 +1,5 @@
 ---
-title: "Jakob Scharf"
+title: "Keynote"
 location: "Vika"
 category: "Talk"
 speaker: "Jakob Scharf"

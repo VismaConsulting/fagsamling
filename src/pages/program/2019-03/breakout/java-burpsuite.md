@@ -9,6 +9,8 @@ location: Tjuvholmen
 group: "Java"
 speaker: Vegar Engen
 thumbnail: ./burpsuite.png
+speakers:
+  - "/speakers/2019-03/vegar/"
 ---
 
 Kort intro til PortSwigger Burpsuite, en Web Vulnerability Scanner.
