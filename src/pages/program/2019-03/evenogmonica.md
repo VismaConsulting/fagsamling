@@ -1,5 +1,6 @@
 ---
 title: "Parallelle talks"
+description: "Velg mellom teknisk og forretningsmessig talk"
 category: "Talk"
 page_type: "event"
 from: "2019-03-29T17:15"

@@ -100,6 +100,7 @@ En event kan inneholde følgende:
 
 ---
 title: "Tittelen på eventen"
+description: "Denne eventen er bra"
 speaker: "Will Smith"
 category: "Gruppeoppgave" 
 page_type: "event"
@@ -120,6 +121,7 @@ markdown-syntaks
 ```
 
 * **title**: Tittelen på eventen. Hold den kort og fengende. <span style="color:red">*</span>
+* **description**: Kort beskrivelse av eventen som vises på programforsiden.
 * **speaker**: Navnet på den som holder talken
 * **category**: Feks. Gruppeoppgave, pause, Breakout session. Kan markere events på forskjellige måter iht kategory. 
 * **page_type**: Viser at dette er en event. <span style="color:red">*</span>
