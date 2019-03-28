@@ -17,7 +17,11 @@ export default ({location, data = {}}) => {
     return (
         <Layout location={location} crumbLabel="Program" fullWidth={false}>
             <h1 style={{marginBottom: '30px'}}>
-                <FontAwesomeIcon style={{fontSize: '0.8em'}} icon={faCalendarAlt}/> Program
+                <div className="row">
+                    <div className="col-sm-3">
+                        <FontAwesomeIcon style={{fontSize: '0.8em'}} icon={faCalendarAlt}/> Program
+                    </div>
+                </div>
             </h1>
             <div className="row">
                 {Array.from(postsByDay, ([key, value]) => {
