@@ -81,7 +81,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## Domenet vårt
+## 📖 Domenet vårt
 
 Domenet representeres i markdown-filer som har frontmatter i toppen av fila. 
 
@@ -91,7 +91,7 @@ Alt som kommer etter frontmatter, blir gjort om til HTML i henhold til vanlige M
 
 Filene plasseres i en mappestruktur etter år og måned som fagsamlingen arrangeres i. For å skifte visning mellom feks 2019-03 og 2019-10, endre i `siteMetadata.currentFagsamling` i `gatsby-config.js`.
 
-### Events
+### 📅 Events
 Under `src/pages/program` ligger markdown-filer som representerer events. Grupper filene etter hvilken måned fagsamlingen er i.
 
 En event kan inneholde følgende:
@@ -135,7 +135,7 @@ markdown-syntaks
 
 <span style="color:red">*</span> Obligatorisk felt
 
-### Speakers
+### 🦜 Speakers
 Under `src/pages/speakers` ligger markdown-filer som representerer speakers. Grupper filene etter hvilken måned fagsamlingen er i.
 
 En speaker kan inneholde følgende:
