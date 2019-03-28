@@ -59,11 +59,11 @@ const InlineEvent = ({event}) => {
                                     <span className="badge badge-primary" style={{fontSize: '0.7em', marginRight: '2px'}}>
                                         {subevent.frontmatter.group}
                                     </span>
+                                    <span className="badge badge-secondary" style={{fontSize: '0.7em', marginRight: '2px'}}>
+                                        {subevent.frontmatter.speaker}
+                                    </span>
                                     <span className="badge badge-info" style={{fontSize: '0.7em', marginRight: '2px'}}>
                                         {subevent.frontmatter.location}
-                                    </span>
-                                    <span className="badge badge-secondary" style={{fontSize: '0.7em'}}>
-                                        {subevent.frontmatter.speaker}
                                     </span>
                                 </div>
                             </Link>
