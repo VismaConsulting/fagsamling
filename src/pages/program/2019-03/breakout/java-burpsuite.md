@@ -6,7 +6,7 @@ page_subtype: "subevent"
 from: "2019-03-30T13:00"
 to: "2019-03-30T14:00"
 location: Tjuvholmen
-group: "Java"
+group: "Java/Test"
 speaker: Vegar Engen
 thumbnail: ./burpsuite.png
 speakers:
