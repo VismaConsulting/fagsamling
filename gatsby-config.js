@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Visma Consulting Fagsamling`,
-    description: `Websidene til fagsamlingene til Visma Consulting`,
-    author: `@andersems`,
-    currentFagsamling: '2019-10',
-    siteUrl: 'https://fagsamling.vismaconsulting.no'
+    description: `Websidene til Visma Consulting sine fagsamlinger`,
+    author: `@andersems && @bjornosal`,
+    currentFagsamling: "2019-10",
+    siteUrl: "https://fagsamling.vismaconsulting.no",
   },
   plugins: [
     {
@@ -44,16 +44,16 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Fagsamling med Visma Consulting`,
-        short_name: `fagsamling`,
-        start_url: `/`,
+        short_name: `Fagsamling`,
+        start_url: ``,
         background_color: `#007ACA`,
         theme_color: `#007ACA`,
         display: `minimal-ui`,
-        icon: `src/images/visma-just-logo.png`
+        icon: `src/images/visma-just-logo.png`,
       },
     },
     `gatsby-plugin-modal-routing`,
-    // 'gatsby-plugin-offline',
-    `gatsby-plugin-remove-serviceworker`
+    `gatsby-plugin-offline`
+    //`gatsby-plugin-remove-serviceworker`
   ],
 }
