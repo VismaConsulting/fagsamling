@@ -45,7 +45,7 @@ module.exports = {
       options: {
         name: `Fagsamling med Visma Consulting`,
         short_name: `Fagsamling`,
-        start_url: ``,
+        start_url: `/`,
         background_color: `#007ACA`,
         theme_color: `#007ACA`,
         display: `minimal-ui`,
