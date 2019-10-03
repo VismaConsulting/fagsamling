@@ -11,7 +11,7 @@ location: "Vippa | Clarion Hotel | Romnavn"
 
 group: "Hvis man vil gruppere basert på faggruppe eller lignende"
 
-thumbnail: "./fullstendig-bildenavn.jpg" #Vises øverst på eventet. ikke fjern ./ før bildenavnet. Bildet må ligge i samme mappe.
+thumbnail: "./bilde-av-personen.jpg" #Vises øverst på eventet. ikke fjern ./ før bildenavnet. Bildet må ligge i samme mappe.
 speakers:  # Disse vises nederst på siden for eventen.
   - /speakers/2019-10/foredragsholder1/
   - /speakers/2019-10/foredragsholder2/
