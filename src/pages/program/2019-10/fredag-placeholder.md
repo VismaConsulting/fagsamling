@@ -5,4 +5,7 @@ location: "VIPPA"
 from: "2019-10-18T15:00"
 to: "2019-10-18T20:00"
 page_type: "event"
+speaker: "Vidar Evensen"
+speakers: 
+  - /speakers/2019-10/vidar-evensen/
 ---
