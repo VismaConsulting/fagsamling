@@ -16,10 +16,23 @@ h6 {
 }
 
 .container.card {
-  background-color: #222222 !important;
-  border: .05em solid #FFF;
+  background-color: #333333 !important;
+  border: 0.05em solid #fff;
 }
 
-p {
-    color: #FFF;
+p,
+.speakerInfoText p {
+  color: #fff !important;
+}
+
+.inline-event-card p {
+  color: #000 !important;
+}
+
+.container.card.p {
+  color: #fff !important;
+}
+
+div.jumbotron {
+  background-color: #333333 !important;
 }

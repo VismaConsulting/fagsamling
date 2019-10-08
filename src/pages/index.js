@@ -7,7 +7,7 @@ import SEO from "../components/layout/seo"
 const IndexPage = ({location}) => {
     return (
         <Layout location={location}>
-            <SEO title="Hjem" keywords={[`gatsby`, `application`, `react`]}/>
+            <SEO title="Hjem" keywords={[`visma`, `fagsamling`, `visma consulting`]}/>
             <div className="jumbotron">
                 <h1 className="display-4">Velkommen til fagsamling!</h1>
                 <h2 className="lead">18. og 19. oktober 2019</h2>

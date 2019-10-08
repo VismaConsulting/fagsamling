@@ -19,7 +19,7 @@ const InlineEvent = ({event}) => {
                 border: 'none',
                 backgroundColor: '#F0F2F5',
             }}>
-            <div className="card-body" style={{paddingBottom: '5px'}}>
+            <div className="card-body inline-event-card" style={{paddingBottom: '5px'}}>
                 <h6><a href={event.fields.slug}>{tidspunkt} - {frontmatter.title}</a></h6>
                 <EventMetaData {...frontmatter} />
                 <p style={{fontSize: '0.9em'}}>{frontmatter.description}</p>

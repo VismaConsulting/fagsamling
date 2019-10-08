@@ -95,7 +95,7 @@ export default ({location, data}) => {
                                     </div>
                                     <div className="col-sm-10">
                                         <h5>{speaker.frontmatter.name}</h5>
-                                        <div dangerouslySetInnerHTML={{__html: speaker.html}}/>
+                                        <div className="speakerInfoText" dangerouslySetInnerHTML={{__html: speaker.html}}/>
                                     </div>
                                 </div>
                             </div>
