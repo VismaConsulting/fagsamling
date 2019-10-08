@@ -1,0 +1,25 @@
+body {
+  background-color: #222222 !important;
+}
+
+a {
+  color: #222222 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff !important;
+}
+
+.container.card {
+  background-color: #222222 !important;
+  border: .05em solid #FFF;
+}
+
+p {
+    color: #FFF;
+}

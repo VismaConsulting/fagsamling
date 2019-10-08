@@ -12,3 +12,5 @@
 .card {
     background-color: #F0F2F5;
 }
+
+@import "./black-theme.css"
