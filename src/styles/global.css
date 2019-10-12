@@ -1,14 +1,68 @@
 @media (min-width: 1700px) {
-    .container {
-        max-width: 1700px !important;
-    }
+  .container {
+    max-width: 1700px !important;
+  }
 }
 @media (min-width: 1500px) {
-    .container {
-        max-width: 1400px !important;
-    }
+  .container {
+    max-width: 1400px !important;
+  }
 }
 
 .card {
-    background-color: #F0F2F5;
+  background-color: #f0f2f5;
 }
+
+.pwaPopup p {
+  padding: 1em;
+  text-align: center;
+}
+
+.pwaPopup {
+  width: 90%;
+  position: fixed;
+  bottom: 30px;
+  background: #222;
+  border: 1px solid #fff;
+  background-color: #222;
+  border-radius: 0.3rem;
+  animation: show-popup 0.5s 1;
+  animation-delay: 15s;
+  animation-fill-mode: forwards;
+}
+
+.pwaPopup:after,
+.pwaPopup:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.pwaPopup:after {
+  border-color: rgba(34, 34, 34, 0);
+  border-top-color: #222;
+  border-width: 25px;
+  margin-left: -25px;
+}
+.pwaPopup:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 26px;
+  margin-left: -26px;
+}
+
+@keyframes show-popup {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@import "./black-theme.css";

@@ -1,0 +1,38 @@
+body {
+  background-color: #222222 !important;
+}
+
+a {
+  color: #222222 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff !important;
+}
+
+.container.card {
+  background-color: #333333 !important;
+  border: 0.05em solid #fff;
+}
+
+p,
+.speakerInfoText p {
+  color: #fff !important;
+}
+
+.inline-event-card p {
+  color: #000 !important;
+}
+
+.container.card.p {
+  color: #fff !important;
+}
+
+div.jumbotron {
+  background-color: #333333 !important;
+}
