@@ -5,9 +5,7 @@ import Layout from "../components/layout/Layout"
 import SEO from "../components/layout/seo"
 
 const IndexPage = ({ location }) => {
-  const [showInstallMessage, setShowInstallMessage] = useState(
-    shouldShowInstallMessage
-  )
+  const [showInstallMessage, setShowInstallMessage] = useState()
   useEffect(() => {
     if (shouldShowInstallMessage() === true) {
       setShowInstallMessage(true)
