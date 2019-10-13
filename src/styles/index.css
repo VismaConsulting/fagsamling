@@ -33,6 +33,8 @@
 }
 
 @media (max-width: 768px) {
-  .locationContainer {
+  div.jumbotron {
+      margin-bottom: 0;
   }
+  
 }
