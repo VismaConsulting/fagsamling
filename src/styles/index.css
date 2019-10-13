@@ -1,0 +1,38 @@
+.row {
+  margin: 0 auto;
+}
+
+.landingPageInfoContainer {
+  background-color: #fff;
+  padding: 1rem 0 2rem 0;
+  border-radius: 0.1rem;
+}
+
+.landingPageInfoContainer img {
+  width: 95%;
+}
+
+.landingPageInfoContainer p {
+  color: #000 !important;
+  width: 90%;
+  margin: auto;
+}
+
+.locationContainer {
+  height: 75%;
+}
+
+@media (min-width: 768px) {
+  .speakerContainer {
+    transform: rotate(-3deg);
+  }
+
+  .locationContainer {
+    transform: rotate(3deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .locationContainer {
+  }
+}
