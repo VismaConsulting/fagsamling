@@ -9,12 +9,28 @@ import Vippa from "./../images/vippa.jpg"
 
 const IndexPage = ({ location }) => {
   const [showInstallMessage, setShowInstallMessage] = useState(false)
+  const [isSafari, setIsSafari] = useState(false)
 
   useEffect(() => {
     if (shouldShowInstallMessage()) {
       setShowInstallMessage(true)
     }
   }, [showInstallMessage])
+
+  useEffect(() => {
+    const isSafari =
+      /constructor/i.test(window.HTMLElement) ||
+      (function(p) {
+        return p.toString() === "[object SafariRemoteNotification]"
+      })(
+        !window["safari"] ||
+          (typeof safari !== "undefined" && safari.pushNotification)
+      )
+
+    if (isSafari) {
+      setIsSafari(true)
+    }
+  }, [])
 
   return (
     <Layout location={location}>
