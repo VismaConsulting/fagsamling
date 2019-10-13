@@ -1,5 +1,5 @@
 ---
-title: "Hands on med AWS"
+title: "Hands-on med AWS"
 category: "Utvikling"
 page_type: "event"
 page_subtype: "subevent"

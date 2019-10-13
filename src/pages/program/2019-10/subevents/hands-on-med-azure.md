@@ -1,5 +1,5 @@
 ---
-title: "Hands on med Azure"
+title: "Hands-on med Azure"
 category: "Utvikling"
 page_type: "event"
 page_subtype: "subevent"
