@@ -1,5 +1,5 @@
 ---
-title: "Analyse av sky"
+title: "Sikkerhet i skyen"
 category: "Talk"
 speaker: "Mikko Hypponen"
 from: "2019-10-18T16:45"
