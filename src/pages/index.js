@@ -1,36 +1,29 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout/Layout"
 import SEO from "../components/layout/seo"
-import { shouldShowInstallMessage, isSafari } from "../utils/webappUtil"
+import { shouldShowInstallMessage } from "../utils/webappUtil"
 import MikkoHypponen from "./../images/mikko-hypponen.jpg"
 import Vippa from "./../images/vippa.jpg"
+import Cookies from "universal-cookie"
+import { isIOS, isMobileSafari } from "react-device-detect"
 
 const IndexPage = ({ location }) => {
-  const [showInstallMessage, setShowInstallMessage] = useState(false)
-  const [isSafari, setIsSafari] = useState(false)
+  const HAS_SEEN_WEBAPP_POPUP = "hasSeenWebappPopup"
 
   useEffect(() => {
-    if (shouldShowInstallMessage()) {
-      setShowInstallMessage(true)
-    }
-  }, [showInstallMessage])
-
-  useEffect(() => {
-    const isSafari =
-      /constructor/i.test(window.HTMLElement) ||
-      (function(p) {
-        return p.toString() === "[object SafariRemoteNotification]"
-      })(
-        !window["safari"] ||
-          (typeof safari !== "undefined" && safari.pushNotification)
-      )
-
-    if (isSafari) {
-      setIsSafari(true)
+    const cookies = new Cookies()
+    if (shouldShowInstallMessage() && !hasSeenWebappPopup()) {
+      cookies.set(HAS_SEEN_WEBAPP_POPUP, true, { path: "/", maxAge: 6100000 })
     }
   }, [])
+
+  const hasSeenWebappPopup = () => {
+    const cookies = new Cookies()
+
+    return cookies.get(HAS_SEEN_WEBAPP_POPUP)
+  }
 
   return (
     <Layout location={location}>
@@ -80,11 +73,11 @@ const IndexPage = ({ location }) => {
           Se program
         </Link>
       </div>
-      {showInstallMessage && (
+      {isIOS && !hasSeenWebappPopup() && (
         <div className="pwaPopup">
           <p>
             Installer nettsiden som en webapp på telefonen din.{" "}
-            {isSafari
+            {isMobileSafari
               ? "Trykk på del-ikonet og trykk på Legg til på hjem-skjermen"
               : "Åpne opp denne siden i Safari, trykk på del-ikonet og trykk på Legg til på hjem-skjermen"}
           </p>

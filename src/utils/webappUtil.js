@@ -1,17 +1,10 @@
-const isIos = () => {
-  const userAgent = window.navigator.userAgent.toLowerCase()
-  return /iphone|ipad|ipod/.test(userAgent)
-}
+import { isIOS } from "react-device-detect"
 
 const isInStandaloneMode = () =>
   "standalone" in window.navigator && window.navigator.standalone
 
 const shouldShowInstallMessage = () => {
-  return isIos() && !isInStandaloneMode()
+  return isIOS && !isInStandaloneMode()
 }
 
-
-
-export {
-  shouldShowInstallMessage
-}
+export { shouldShowInstallMessage }
