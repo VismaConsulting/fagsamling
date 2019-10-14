@@ -1,13 +1,13 @@
 ---
-title: "Isolasjonsmodeller og skyarkitektur"
+title: "DevOps i skyen"
 category: "Talk"
 page_type: "event"
 page_subtype: "subevent"
 from: "2019-10-19T11:15"
 to: "2019-10-19T12:00"
-group: Teknisk AWS
-speaker: Ragnar Harper
+group: Teknisk Azure
+speaker: Shailendra Singh Chauhan
 speakers:
-  - /speakers/2019-10/ragnar-harper/
+  - /speakers/2019-10/shailendra-singh-chauhan/
 ---
 

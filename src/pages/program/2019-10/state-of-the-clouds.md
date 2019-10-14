@@ -1,5 +1,5 @@
 ---
-title: "Analyse av sky"
+title: "State of the clouds"
 category: "Talk"
 speaker: "Freddie Rinderud"
 from: "2019-10-18T15:15"

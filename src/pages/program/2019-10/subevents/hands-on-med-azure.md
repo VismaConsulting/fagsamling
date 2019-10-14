@@ -5,7 +5,9 @@ page_type: "event"
 page_subtype: "subevent"
 from: "2019-10-19T13:30"
 to: "2019-10-19T15:00"
-group: Teknisk
-speaker: Azure
+group: Teknisk Azure
+speaker: Shailendra Singh Chauhan
+speakers:
+  - /speakers/2019-10/shailendra-singh-chauhan/
 ---
 
