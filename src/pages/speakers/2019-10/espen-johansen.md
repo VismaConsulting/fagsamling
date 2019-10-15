@@ -4,4 +4,4 @@ thumbnail: "./placeholder-konferansier.jpg"
 page_type: "speaker_bio"
 ---
 
-Beskrivelse
+Visma sikkerhetsekspert. Ansvarlig for håndtering av fjorårets breach av Visma. Driver testing av tekniske og sosiale aspekter for å sikre systemer og bedrifter.
