@@ -58,7 +58,7 @@ const IndexPage = ({ location }) => {
               alt="Mennesker foran Vippa Mathall"
             />
             <p>
-              Visma @ Vippa <br /> Fredag 18.oktober 14:30-23:00
+              Visma @ Vippa <br /> Fredag 18. oktober 14:30-23:00
             </p>
           </div>
         </div>

@@ -36,3 +36,5 @@ p,
 div.jumbotron {
   background-color: #222 !important;
 }
+
+@import "./landing-page-2019-10.css";

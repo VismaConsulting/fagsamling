@@ -4,6 +4,7 @@ body {
 
 .navbar {
     min-height: 80px;
+    padding-bottom: 0 !important;
 }
 
 .navbar-brand {
