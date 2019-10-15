@@ -40,6 +40,11 @@ const InlineEvent = ({event}) => {
                             const itemClassname = classnames(
                                 'list-group-item',
                                 'list-group-item-action',
+                                'flex-column',
+                                'flex-sm-column',
+                                'flex-sm-row',
+                                'flex-lg-row',
+                                'flex-xl-row',
                                 'd-flex',
                                 'justify-content-between',
                                 'align-items-center'
