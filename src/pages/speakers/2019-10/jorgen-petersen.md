@@ -1,7 +1,6 @@
 ---
-name: "Jørgen Petersen"
-thumbnail: "./placeholder-konferansier.jpg"
+name: "Jørgen Petersen - Promis"
+thumbnail: "./images/jorgen-petersen.jpg"
 page_type: "speaker_bio"
 ---
 
-Beskrivelse

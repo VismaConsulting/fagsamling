@@ -1,7 +1,6 @@
 ---
-name: "Geir Balsnes"
-thumbnail: "./placeholder-konferansier.jpg"
+name: "Geir Balsnes - Avento"
+thumbnail: "./images/geir-balsnes.jpg"
 page_type: "speaker_bio"
 ---
 
-Beskrivelse
