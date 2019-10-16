@@ -1,6 +1,6 @@
 ---
 name: "Espen Johansen - Visma"
-thumbnail: "./placeholder-konferansier.jpg"
+thumbnail: "./images/espen-johansen.jpg"
 page_type: "speaker_bio"
 ---
 
