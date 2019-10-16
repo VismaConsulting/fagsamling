@@ -6,16 +6,21 @@ const VismaLogo = () => (
   <StaticQuery
     query={graphql`
       query {
-        fileName: file(relativePath: { eq: "images/visma-logo-smaller.png" }) {
+        fileName: file(relativePath: { eq: "images/visma-logo-white-smaller.png" }) {
           childImageSharp {
-            fixed(height: 65) {
+            fixed(height: 100) {
               ...GatsbyImageSharpFixed
             }
           }
         }
       }
-`}
-    render={data => <Img fixed={data.fileName.childImageSharp.fixed} />}
+    `}
+    render={data => (
+      <Img
+        fixed={data.fileName.childImageSharp.fixed}
+        style={{top: 0}}
+      />
+    )}
   />
 )
 export default VismaLogo
