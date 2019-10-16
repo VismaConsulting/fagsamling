@@ -8,7 +8,7 @@ const VismaLogo = () => (
       query {
         fileName: file(relativePath: { eq: "images/visma-logo-white-smaller.png" }) {
           childImageSharp {
-            fixed(height: 100) {
+            fixed(height: 90) {
               ...GatsbyImageSharpFixed
             }
           }
