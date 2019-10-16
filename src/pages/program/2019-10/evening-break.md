@@ -9,9 +9,9 @@ page_type: "event"
 
 
 #### Meny 
-• Kaffe og te
-• Sprø grønnsaker med dipper
-• Blåbærmuffins
-• Energy Bar havre og sjokolade
-• Nøtter & chips
-• Sjokolade
+- Kaffe og te
+- Sprø grønnsaker med dipper
+- Blåbærmuffins
+- Energy Bar havre og sjokolade
+- Nøtter & chips
+- Sjokolade
