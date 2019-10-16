@@ -1,6 +1,6 @@
 ---
-name: "Freddie Rinderud"
-thumbnail: "./placeholder-konferansier.jpg"
+name: "Freddie Rinderud - Radar Ecosystem"
+thumbnail: "./images/freddie-rinderud.jpg"
 page_type: "speaker_bio"
 ---
 

@@ -1,6 +1,6 @@
 ---
-name: "Vidar Evensen"
-thumbnail: "./vidar-evensen.jpg"
+name: "Vidar Evensen - Visma Consulting"
+thumbnail: "./images/vidar-evensen.jpg"
 page_type: "speaker_bio"
 ---
 

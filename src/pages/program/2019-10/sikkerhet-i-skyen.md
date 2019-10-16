@@ -1,7 +1,7 @@
 ---
 title: "Sikkerhet i skyen"
 category: "Talk"
-speaker: "Mikko Hypponen"
+speaker: "Mikko Hyppönen"
 from: "2019-10-18T16:45"
 to: "2019-10-18T17:45"
 page_type: "event"

@@ -9,3 +9,5 @@ speakers:
   - /speakers/2019-10/freddie-rinderud/
 ---
 
+
+Användandet av molntjänster fortsätter att öka, men molntjänstmognaden i nordiska verksamheter är fortfarande låg. Radar presenterar nuläge, trender och utmaningar inom molntjänstområdet.

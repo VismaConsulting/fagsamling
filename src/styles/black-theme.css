@@ -37,5 +37,13 @@ div.jumbotron {
   background-color: #222 !important;
 }
 
+.list-group-item {
+    color: #222;
+}
+
+li {
+    color: #FFF;
+}
+
 @import "./landing-page-2019-10.css";
 @import "./navbar-black-overrides.css";
