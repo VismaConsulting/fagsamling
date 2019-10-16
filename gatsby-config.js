@@ -49,7 +49,7 @@ module.exports = {
         background_color: `#222222`,
         theme_color: `#222222`,
         display: `minimal-ui`,
-        icon: `src/images/visma-just-logo.png`,
+        icon: `src/images/visma-just-logo-white.png`,
       },
     },
     `gatsby-plugin-modal-routing`,
