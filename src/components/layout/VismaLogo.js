@@ -18,7 +18,6 @@ const VismaLogo = () => (
     render={data => (
       <Img
         fixed={data.fileName.childImageSharp.fixed}
-        style={{top: 0}}
       />
     )}
   />
