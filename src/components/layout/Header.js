@@ -8,7 +8,7 @@ import {Nav, Navbar, NavbarBrand, NavItem, Collapse, NavbarToggler} from "reacts
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    return (<Navbar color="light" light expand="md" fixed="top">
+    return (<Navbar style={{backgroundColor: '#222'}} dark expand="md" fixed="top">
             <NavbarBrand href="/">
                 <VismaLogo/>
             </NavbarBrand>

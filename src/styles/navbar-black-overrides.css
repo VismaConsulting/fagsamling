@@ -1,0 +1,15 @@
+.navbar-brand {
+  padding: 0;
+  margin-left: -20px;
+}
+
+.nav-link {
+  color: #fff !important;
+  padding-top: 5px !important;
+  padding-bottom: 0 !important;
+}
+@media (max-width: 768px) {
+  .nav-link {
+    padding-bottom: 10px !important;
+  }
+}
