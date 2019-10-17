@@ -12,3 +12,7 @@ speakers:
   - /speakers/2019-10/shailendra-singh-chauhan/
 ---
 
+- Why DevOps
+ - DevOps in Microsoft
+ - Azure DevOps
+- Demo

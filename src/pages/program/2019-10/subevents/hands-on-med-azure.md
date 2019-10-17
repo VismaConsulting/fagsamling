@@ -12,3 +12,5 @@ speakers:
   - /speakers/2019-10/shailendra-singh-chauhan/
 ---
 
+- Microsoft cloud workshop
+ - Hands on lab
