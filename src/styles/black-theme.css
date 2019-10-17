@@ -45,5 +45,15 @@ li {
     color: #FFF;
 }
 
+.card-link {
+    background-color: #222222 !important;
+    color: #FFF !important;
+    border-color: #FFF !important;
+}
+
+.card-link:hover {
+    box-shadow: inset 0 0 500px rgba(255, 255, 255, .2);
+}
+
 @import "./landing-page-2019-10.css";
 @import "./navbar-black-overrides.css";

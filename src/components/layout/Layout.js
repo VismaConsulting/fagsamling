@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './layout.css'
 import '../../styles/global.css'
 import Header from "./Header"
+import { Link } from "gatsby"
 
 const Layout = ({children, breadcrumbs, fullWidth}) => {
     const containerClass = fullWidth ? 'container-fluid' : 'container';
@@ -21,7 +22,7 @@ const Layout = ({children, breadcrumbs, fullWidth}) => {
                 <ol className="breadcrumb">
                     {breadcrumbs.map(crumb => {
                             const classNames = "breadcrumb-item" + (crumb.current ? ' active' : '');
-                            const label = crumb.current ? crumb.label : <a href={crumb.slug}>{crumb.label}</a>
+                            const label = crumb.current ? crumb.label : <Link to={crumb.slug}>{crumb.label}</Link>
                             return (
                                 <li key={crumb.label} className={classNames}>{label}</li>
                             )

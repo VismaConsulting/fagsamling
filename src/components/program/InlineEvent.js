@@ -19,8 +19,8 @@ const InlineEvent = ({event}) => {
                 border: 'none',
                 backgroundColor: '#F0F2F5',
             }}>
-            <div className="card-body inline-event-card" style={{paddingBottom: '5px'}}>
-                <h6><a href={event.fields.slug}>{tidspunkt} - {frontmatter.title}</a></h6>
+            <Link to={event.fields.slug} className="card-body inline-event-card" style={{paddingBottom: '5px', textDecoration: "none"}}>
+                <h6><Link to={event.fields.slug}>{tidspunkt} - {frontmatter.title}</Link></h6>
                 <EventMetaData {...frontmatter} />
                 <p style={{fontSize: '0.9em'}}>{frontmatter.description}</p>
                 {underposterAaVise.length > 0 && <ul className="list-group" style={{paddingBottom: '10px'}}>
@@ -74,7 +74,7 @@ const InlineEvent = ({event}) => {
                             </Link>
                     })}
                 </ul>}
-            </div>
+            </Link>
         </div>
     )
 };
