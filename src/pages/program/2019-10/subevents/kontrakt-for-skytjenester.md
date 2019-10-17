@@ -12,3 +12,4 @@ speakers:
   - /speakers/2019-10/jorgen-petersen/
 ---
 
+ Jørgen vil presentere utfordringer med Dataforeningens eksisterende skytjenesteavtale og status på arbeidet med å få etablert en revidert skytjenesteavtale, basert på tilbakemeldinger og erfaringer så langt.

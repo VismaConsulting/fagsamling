@@ -12,3 +12,8 @@ speakers:
   - /speakers/2019-10/espen-bakjord/
 ---
 
+I denne sesjonen ser vi nærmere på hvilke lover og regler som er relevante ved anskaffelse og bruk av skytjenester, og hvordan reglene bør forstås.
+Blant annet spør vi om følgende:
+- Finnes det lovregler som regulerer bruk av skytjenester generelt eller spesielt?
+- Er det noen forskjell på å benytte skytjenester innenfor og utenfor Norges grenser?
+- Er det noen særlige personvernrettslige utfordringer ved bruk av skytjenester?

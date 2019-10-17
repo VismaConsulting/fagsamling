@@ -84,8 +84,8 @@ export default ({location, data}) => {
                     )
                 })}
                 {/*<ParallelleTracks event={event}/>*/}
-                {event.fields.speakers.length > 0 && <div>
-                    <h3>About the speaker</h3>
+                {event.fields.speakers.length > 0 && <div> 
+                    <h3>Om foredragsholderen{event.fields.speakers.length > 1 ? "e" : ""}</h3>
                     {event.fields.speakers.map(speaker => {
                         return (
                             <div className="container card" key={speaker.id}>
