@@ -46,7 +46,7 @@ const IndexPage = ({ location }) => {
               alt="Mikko Hypponen, internasjonal sikkerhetsekspert"
             />
             <p>
-              Internasjonal sikkerhetsekspert <b>Mikko Hypponen</b>,{" "}
+              Internasjonal sikkerhetsekspert <b>Mikko Hyppönen</b>,{" "}
               <b>Freddie Rinderud</b>, skyleverandørene og <b>Espen Johansen</b>
               , Vismas angrepsekspert
             </p>
