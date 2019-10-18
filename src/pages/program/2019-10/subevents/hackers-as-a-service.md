@@ -6,7 +6,7 @@ page_subtype: "subevent"
 location: "Agora 3"
 from: "2019-10-19T10:00"
 to: "2019-10-19T11:00"
-speaker: Even Lysen
+speaker: "Naughty Even Lysen"
 group: Teknisk
 speakers:
   - /speakers/2019-10/even-lysen/
